@@ -1,0 +1,121 @@
+<div class="patient-container">
+    <div class="header">
+      <h2>Datos del paciente</h2>
+    </div>
+  
+    <div class="tabs">
+      <div class="tab" [class.active]="activeTab === 'administrativos'" (click)="setActiveTab('administrativos')">Administrativos</div>
+      <div class="tab" [class.active]="activeTab === 'red'" (click)="setActiveTab('red')">Red asistencial</div>
+      <div class="tab" [class.active]="activeTab === 'episodios'" (click)="setActiveTab('episodios')">Episodios</div>
+      <div class="tab" [class.active]="activeTab === 'economicos'" (click)="setActiveTab('economicos')">Datos económicos</div>
+    </div>
+  
+    <div class="patient-id">
+      <span>{{ patient.id }} - {{ patient.name }} | {{ patient.gender }}, {{ patient.age }} años</span>
+    </div>
+  
+    <div class="details-section">
+      <h3>Detalles personales</h3>
+  
+      <div class="details-grid">
+        <div class="detail-row">
+          <div class="detail-item">
+            <label>Documento nacional ident./ Número ident Fiscal</label>
+            <input type="text" [value]="patient.documentId" readonly>
+          </div>
+          <div class="detail-item">
+            <label>Fecha nacimiento</label>
+            <input type="text" [value]="patient.birthDate" readonly>
+          </div>
+          <div class="detail-item">
+            <label>Tarjeta sanitaria</label>
+            <input type="text" [value]="patient.healthCard" readonly>
+          </div>
+        </div>
+  
+        <div class="detail-row">
+          <div class="detail-item">
+            <label>Dirección</label>
+            <input type="text" [value]="patient.address" readonly>
+          </div>
+          <div class="detail-item">
+            <label>Número SS</label>
+            <input type="text" [value]="patient.ssNumber" readonly>
+          </div>
+          <div class="detail-item">
+            <label>Distrito</label>
+            <input type="text" [value]="patient.district" readonly>
+          </div>
+        </div>
+  
+        <div class="detail-row">
+          <div class="detail-item">
+            <label>Teléfono</label>
+            <input type="text" [value]="patient.phone" readonly>
+          </div>
+          <div class="detail-item">
+            <label>Localización</label>
+            <input type="text" [value]="patient.location" readonly>
+          </div>
+          <div class="detail-item">
+            <!-- Empty space to maintain grid alignment -->
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="details-section">
+      <h3>Detalles médicos</h3>
+  
+      <div class="details-grid">
+        <div class="detail-row">
+          <div class="detail-item">
+            <label>Servicio</label>
+            <input type="text" [value]="patient.service" readonly>
+          </div>
+          <div class="detail-item">
+            <label>Episodio</label>
+            <input type="text" [value]="patient.episode" readonly>
+          </div>
+          <div class="detail-item">
+            <label>Fecha de ingreso</label>
+            <input type="text" [value]="patient.admissionDate" readonly>
+          </div>
+        </div>
+  
+        <div class="detail-row">
+          <div class="detail-item">
+            <label>Centro</label>
+            <input type="text" [value]="patient.center" readonly>
+          </div>
+          <div class="detail-item">
+            <label>Médico</label>
+            <input type="text" [value]="patient.doctor" readonly>
+          </div>
+          <div class="detail-item">
+            <label>Ubicación</label>
+            <input type="text" [value]="patient.location2" readonly>
+          </div>
+        </div>
+  
+        <div class="detail-row">
+          <div class="detail-item">
+            <label>Unenf</label>
+            <input type="text" [value]="patient.unenf" readonly>
+          </div>
+          <div class="detail-item">
+            <label>Servicio del ingreso</label>
+            <input type="text" [value]="patient.admissionService" readonly>
+          </div>
+          <div class="detail-item">
+            <!-- Empty space to maintain grid alignment -->
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="actions">
+      <button class="btn btn-primary" (click)="onAccept()">Aceptar</button>
+      <button class="btn btn-outline-primary" (click)="onCancel()">Cancelar</button>
+    </div>
+  </div>
